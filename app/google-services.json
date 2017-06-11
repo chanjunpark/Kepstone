@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "210564123405",
+    "firebase_url": "https://kepstone-a8a0c.firebaseio.com",
+    "project_id": "kepstone-a8a0c",
+    "storage_bucket": "kepstone-a8a0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210564123405:android:e40af2f6aae78dd7",
+        "android_client_info": {
+          "package_name": "com.example.chanjun.cheerup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210564123405-2qkcnfu0b4culfuu0d1h4akjvi1fkv5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1QbCQHrCxGuYI-ST2DSIl1R9P4r11HT0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

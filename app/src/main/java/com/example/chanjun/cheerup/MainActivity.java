@@ -1,5 +1,6 @@
 package com.example.chanjun.cheerup;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
@@ -9,14 +10,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
+    FrameLayout mainframe;
+    ScrollView scrollView1;
+    ScrollView scrollView2;
+    int scrollIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scrollView1 = (ScrollView) findViewById(R.id.getSeoulList);
+        scrollView2 = (ScrollView) findViewById(R.id.getSuwonList);
+
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();
@@ -43,4 +57,61 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public void onRadioButton1Clicked(View v) {
+        changeImage1();
+    }
+
+    public void changeImage1() {
+        scrollView1.setVisibility(View.VISIBLE);
+        scrollView2.setVisibility(View.INVISIBLE);
+    }
+    public void onRadioButton2Clicked(View v) {
+        changeImage2();
+    }
+
+    public void changeImage2() {
+        scrollView1.setVisibility(View.INVISIBLE);
+        scrollView2.setVisibility(View.VISIBLE);
+    }
+
 }
+
+public class RecruitingData {
+    private String name;
+    private String date;
+    private String location;
+    private String type;
+    public RecruitingData() { }
+
+    public RecruitingData(String name, String date, String location, String type) {
+        this.name = name;
+        this.date = date;
+        this.location = location;
+        this.type = type;
+    }
+
+    public String getCorporationName() {
+        return name;
+    }
+
+    public void setCorporationName(String userName) {
+        this.name = name;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getType() {
+        return type;
+    }
+}
+
