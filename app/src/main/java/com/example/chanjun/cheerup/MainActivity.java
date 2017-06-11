@@ -10,16 +10,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
+
 public class MainActivity extends AppCompatActivity {
     FrameLayout mainframe;
     ScrollView scrollView1;
     ScrollView scrollView2;
-    int scrollIndex = 0;
+    EditText editText;
+    Button sendButton;
+
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +39,19 @@ public class MainActivity extends AppCompatActivity {
 
         scrollView1 = (ScrollView) findViewById(R.id.getSeoulList);
         scrollView2 = (ScrollView) findViewById(R.id.getSuwonList);
+
+
+
+
+        editText = (EditText) findViewById(R.id.coName);
+        sendButton = (Button) findViewById(R.id.generator);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecruitingData corData = new RecruitingData(editText.getText().toString(),"20170505","Seoul","IT");  // 유저 이름과 메세지로 chatData 만들기
+                databaseReference.child("information").push().setValue(corData);  // 기본 database 하위 message라는 child에 chatData를 list로 만들기
+                editText.setText("");           }
+            });
 
     }
 
@@ -74,44 +98,11 @@ public class MainActivity extends AppCompatActivity {
         scrollView2.setVisibility(View.VISIBLE);
     }
 
+
+
 }
 
-public class RecruitingData {
-    private String name;
-    private String date;
-    private String location;
-    private String type;
-    public RecruitingData() { }
 
-    public RecruitingData(String name, String date, String location, String type) {
-        this.name = name;
-        this.date = date;
-        this.location = location;
-        this.type = type;
-    }
 
-    public String getCorporationName() {
-        return name;
-    }
 
-    public void setCorporationName(String userName) {
-        this.name = name;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getType() {
-        return type;
-    }
-}
 
