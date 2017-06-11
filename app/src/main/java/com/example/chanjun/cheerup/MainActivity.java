@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         View actionbar = inflater.inflate(R.layout.layout_actionbar, null);
         actionBar.setCustomView(actionbar);
 
+        //액션바 색상.
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.argb(255,85,129,57)));
 
         //액션바 양쪽 공백 없애기
