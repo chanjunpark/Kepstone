@@ -5,25 +5,25 @@ package com.example.chanjun.cheerup;
  */
 
 public class RecruitingData {
-    private String name;
+    private String corporationName;
     private String date;
     private String location;
     private String type;
     public RecruitingData() { }
 
     public RecruitingData(String name, String date, String location, String type) {
-        this.name = name;
+        this.corporationName = name;
         this.date = date;
         this.location = location;
         this.type = type;
     }
 
     public String getCorporationName() {
-        return name;
+        return corporationName;
     }
 
-    public void setCorporationName(String userName) {
-        this.name = name;
+    public void setCorporationName(String name) {
+        this.corporationName = name;
     }
 
     public void setDate(String date) {
