@@ -9,12 +9,24 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 
 public class DetailActivity extends AppCompatActivity {
@@ -24,9 +36,14 @@ public class DetailActivity extends AppCompatActivity {
     RelativeLayout SearchMenu;
     RelativeLayout CategoryMenu;
     Button MainButton;
+    Button sendButton;
+    EditText editText;
+    ListView listView;
+    ChatAdapter adapter;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,28 +66,68 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
+        editText = (EditText) findViewById(R.id.createReply);
+        sendButton = (Button) findViewById(R.id.generator);
+        listView = (ListView) findViewById(R.id.listView);
+
+
+
+        adapter = new ChatAdapter();
+        listView.setAdapter(adapter);
+        setListViewHeightBasedOnChildren(listView);
+
+        //데이터 삽입
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChatData chatData = new ChatData("현재사용자", editText.getText().toString());  // 유저 이름과 메세지로 chatData 만들기
+                databaseReference.child("message").push().setValue(chatData);  // 기본 database 하위 message라는 child에 chatData를 list로 만들기
+                editText.setText("");          }
+            });
+
+
         //데이터 불러오기
-        /*
-        databaseReference.child("information").addChildEventListener(new ChildEventListener() {  // message는 child의 이벤트를 수신합니다.
+       databaseReference.child("message").addChildEventListener(new ChildEventListener() {  // message는 child의 이벤트를 수신합니다.
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                RecruitingData corData = dataSnapshot.getValue(RecruitingData.class);  // chatData를 가져오고
-                resultArea.setText(corData.getCorporationName() + ": " + corData.getDate());  // adapter에 추가합니다.
+                ChatData chatData = dataSnapshot.getValue(ChatData.class);  // chatData를 가져오고
+                adapter.addItem(chatData.getUserName(), chatData.getMessage());  // adapter에 추가합니다.
+                adapter.notifyDataSetChanged();
+                setListViewHeightBasedOnChildren(listView);
             }
-
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
-
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) { }
-
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) { }
-
             @Override
             public void onCancelled(DatabaseError databaseError) { }
-        });*/
+        });
 
+    }
+
+    //길이 초과되는 리스트뷰 표시.
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+
+        int totalHeight = 0;
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.AT_MOST);
+
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
     }
 
     //액션바 포팅.
@@ -133,6 +190,49 @@ public class DetailActivity extends AppCompatActivity {
         else if(isCategoryMenuOpen){
             CategoryMenu.setVisibility(View.INVISIBLE);
             isCategoryMenuOpen = false;
+        }
+    }
+
+    //ListView 호출
+    class ChatAdapter extends BaseAdapter {
+        ArrayList<ChatData> items = new ArrayList<ChatData>();
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+        public void addItem(String cntUser, String cntContent){
+            ChatData item = new ChatData();
+            item.setUserName(cntUser);
+            item.setMessage(cntContent);
+            items.add(item);
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public boolean isEnabled(int position) {
+            return false;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup viewGroup) {
+
+            ChatdataView view = new  ChatdataView (getApplicationContext());
+            ChatData item = items.get(position);
+
+            view.setName(item.getComment());
+
+            return view;
         }
     }
 

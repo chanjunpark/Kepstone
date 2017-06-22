@@ -7,7 +7,6 @@ package com.example.chanjun.cheerup;
 public class ChatData {
     private String userName;
     private String message;
-
     public ChatData() { }
 
     public ChatData(String userName, String message) {
@@ -29,5 +28,10 @@ public class ChatData {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getComment() {
+        String comment = userName + " : " + message;
+        return comment;
     }
 }
