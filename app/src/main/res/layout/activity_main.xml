@@ -18,6 +18,12 @@
             android:layout_height="19dp" />
 
         <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="aaaaa" />
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,7 +123,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1.00"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="2017.05.18"
+                            android:text="2017.05.02"
                             android:textColor="#000000"
                             android:textSize="24sp"
                             android:textStyle="bold"
@@ -134,6 +140,7 @@
                     </LinearLayout>
 
                     <Button
+                        android:id="@+id/cor1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -561,7 +568,6 @@
         android:id="@+id/searchMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:background="#77000000"
         android:orientation="horizontal"
         android:visibility="invisible">
@@ -744,7 +750,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/btn_main"
+            android:background="@drawable/btn_menu"
             android:text="마이페이지"
             android:textColor="#FFFFFFFF"
             android:textSize="24dp"
@@ -758,7 +764,7 @@
             android:layout_below="@+id/button2"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/btn_main"
+            android:background="@drawable/btn_menu"
             android:text="즐겨찾기목록"
             android:textColor="#FFFFFFFF"
             android:textSize="24dp"
@@ -772,14 +778,14 @@
             android:layout_below="@+id/FavoriteButton"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/btn_main"
+            android:background="@drawable/btn_menu"
             android:text="지난채용공고"
             android:textColor="#FFFFFFFF"
             android:textSize="24dp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/MainButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -787,7 +793,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/btn_main"
+            android:background="@drawable/btn_menu"
             android:text="메인으로"
             android:textColor="#FFFFFFFF"
             android:textSize="24dp"

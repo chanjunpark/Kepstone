@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="즐겨찾기"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="30px"
+                        android:paddingRight="10px"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.00"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="2017.05.18"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="10px"
+                        android:paddingRight="30px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/btn_main"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="금융감독원"
+                    android:textColor="#ff000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="30px"
+                        android:paddingRight="10px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.00"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="2017.05.20"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="10px"
+                        android:paddingRight="30px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_main"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="(주)한국존슨앤드존슨"
+                    android:textColor="#ff000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="30px"
+                        android:paddingRight="10px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.00"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="2017.05.22"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="10px"
+                        android:paddingRight="30px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_main"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="(주)삼성전자"
+                    android:textColor="#ff000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="30px"
+                        android:paddingRight="10px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.00"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="2017.05.25"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="10px"
+                        android:paddingRight="30px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_main"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="한국주택금융공사"
+                    android:textColor="#ff000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="30px"
+                        android:paddingRight="10px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.00"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="2017.05.27"
+                        android:textColor="#000000"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:layout_width="200px"
+                        android:layout_height="100px"
+                        android:layout_weight="1"
+                        android:paddingLeft="10px"
+                        android:paddingRight="30px"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/img_line1_edit" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_main"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="한영회계법인"
+                    android:textColor="#ff000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#77000000"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button"
+            android:layout_marginEnd="9dp"
+            android:layout_toStartOf="@+id/button"
+            android:contextClickable="false"
+            android:cursorVisible="false"
+            android:hint="검색어를 입력하세요"
+            android:inputType="text"
+            android:linksClickable="false"
+            android:textColor="#FFFFFFFF"
+            android:textColorHint="#FFFFFFFF" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFFFF"
+            android:text="검색"
+            android:textSize="20dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="6"
+            android:useDefaultMargins="true">
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_row="0"
+                android:text="전체선택"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="금융"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="IT"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="미디어"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="무역"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="생산·제조"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="서비스"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="유통"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="보험"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="건설"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="통신"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="외국계"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="기타"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="20dp"
+                android:layout_row="5"
+                android:background="#FFFFFFFF"
+                android:text="검색"
+                android:textSize="20dp" />
+        </GridLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CategoryMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#77000000"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_menu"
+            android:text="마이페이지"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/FavoriteButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_menu"
+            android:text="즐겨찾기목록"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/FavoriteButton"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_menu"
+            android:text="지난채용공고"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/MainButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button4"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_menu"
+            android:text="메인으로"
+            android:textColor="#FFFFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</FrameLayout>
