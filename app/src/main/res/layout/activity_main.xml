@@ -299,7 +299,6 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -355,7 +354,6 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/button2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -407,7 +405,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1.00"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="2017.05.18"
+                            android:text="2017.05.02"
                             android:textColor="#000000"
                             android:textSize="24sp"
                             android:textStyle="bold"
@@ -567,22 +565,22 @@
         android:visibility="invisible">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/searchWord"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/button"
+            android:layout_alignBottom="@+id/searchButton"
             android:layout_marginEnd="9dp"
-            android:layout_toStartOf="@+id/button"
+            android:layout_toStartOf="@+id/searchButton"
             android:contextClickable="false"
             android:cursorVisible="false"
             android:hint="검색어를 입력하세요"
             android:inputType="text"
             android:linksClickable="false"
-            android:textColorHint="#FFFFFFFF"
-            android:textColor="#FFFFFFFF"/>
+            android:textColor="#FFFFFFFF"
+            android:textColorHint="#FFFFFFFF" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/searchButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
@@ -596,7 +594,7 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button"
+            android:layout_below="@+id/searchButton"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:columnCount="3"
@@ -736,7 +734,7 @@
         android:visibility="invisible">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/MypageButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -755,7 +753,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/button2"
+            android:layout_below="@+id/MypageButton"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/btn_menu"

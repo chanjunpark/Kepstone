@@ -3,50 +3,27 @@ package com.example.chanjun.cheerup;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-public class FavoriteActivity extends AppCompatActivity {
-    FrameLayout mainframe;
-    ScrollView scrollView1;
-    ScrollView scrollView2;
-    EditText editText;
-    Button sendButton;
-    TextView resultArea;
+public class MypageActivity extends AppCompatActivity {
     boolean isSearchMenuOpen =false;
     boolean isCategoryMenuOpen=false;
     RelativeLayout SearchMenu;
     RelativeLayout CategoryMenu;
     Button MainButton;
 
-
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
-
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.favorite_list);
+        setContentView(R.layout.activity_mypage);
 
-        //scrollView1 = (ScrollView) findViewById(R.id.getSeoulList);
-        //scrollView2 = (ScrollView) findViewById(R.id.getSuwonList);
         SearchMenu = (RelativeLayout) findViewById(R.id.searchMenu);
         CategoryMenu = (RelativeLayout) findViewById(R.id.CategoryMenu);
 
@@ -59,9 +36,7 @@ public class FavoriteActivity extends AppCompatActivity {
             }
 
         });
-
     }
-
     //액션바 포팅.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -124,5 +99,4 @@ public class FavoriteActivity extends AppCompatActivity {
             isCategoryMenuOpen = false;
         }
     }
-
 }

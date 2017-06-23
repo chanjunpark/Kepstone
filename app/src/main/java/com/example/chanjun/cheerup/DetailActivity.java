@@ -19,12 +19,15 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -39,7 +42,9 @@ public class DetailActivity extends AppCompatActivity {
     Button sendButton;
     EditText editText;
     ListView listView;
-    ChatAdapter adapter;
+    static ChatAdapter adapter;
+    static int countReplies;
+    TextView comment;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -75,6 +80,9 @@ public class DetailActivity extends AppCompatActivity {
         adapter = new ChatAdapter();
         listView.setAdapter(adapter);
         setListViewHeightBasedOnChildren(listView);
+        comment = (TextView) findViewById(R.id.comment);
+        comment.setText("댓글("+adapter.getCount()+")");
+
 
         //데이터 삽입
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +90,9 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ChatData chatData = new ChatData("현재사용자", editText.getText().toString());  // 유저 이름과 메세지로 chatData 만들기
                 databaseReference.child("message").push().setValue(chatData);  // 기본 database 하위 message라는 child에 chatData를 list로 만들기
-                editText.setText("");          }
+                editText.setText("");
+                comment = (TextView) findViewById(R.id.comment);
+            }
             });
 
 
@@ -94,6 +104,8 @@ public class DetailActivity extends AppCompatActivity {
                 adapter.addItem(chatData.getUserName(), chatData.getMessage());  // adapter에 추가합니다.
                 adapter.notifyDataSetChanged();
                 setListViewHeightBasedOnChildren(listView);
+                comment.setText("댓글("+adapter.getCount()+")");
+
             }
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) { }

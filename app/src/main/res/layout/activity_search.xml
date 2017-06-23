@@ -2,257 +2,138 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chanjun.cheerup.SearchActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="19dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_detail"
-                android:padding="10dp"
-                android:textSize="24sp"
-                android:text="회사명"
-                android:textColor="@color/colorDarkGreen"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="금융감독원"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:background="@color/colorDarkGray" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_detail"
-                android:padding="10dp"
-                android:text="제목"
-                android:textColor="@color/colorDarkGreen"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="금융감독원 선배와의 대화"
-                android:textColor="#000000"
-                android:textSize="18sp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:background="@color/colorDarkGray" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_detail"
-                android:padding="10dp"
-                android:text="캠퍼스"
-                android:textColor="@color/colorDarkGreen"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="인사캠 : 2017년05월02일(화) 18:00 ~ 20:00"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="자과캠 : -"
-                android:textColor="#000000" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:background="@color/colorDarkGray" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_detail"
-                android:padding="10dp"
-                android:text="상세정보"
-                android:textColor="@color/colorDarkGreen"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="날짜 : 5월2일(화) "
-                android:textColor="#000000" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="시간 : 18:30~20:00 "
-                android:textColor="#000000" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="장소 : 33B101"
-                android:textColor="#000000" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="성대출신 금융감독원 신입사원들이 후배님들께 선배와의 대화 진행하고자 합니다.  저희는 5명 참가예정(법학1명, 경영2명, 경제1명, 소비자1명)이며  피피티 전체발표 및 직렬별 개별상담 진행 예정입니다. "
-                android:textColor="#000000" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:background="@color/colorDarkGray" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_detail"
-                android:padding="10dp"
-                android:text="링크"
-                android:textColor="@color/colorDarkGreen"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="https://job.skku.edu/education/recruitmentfair/view.aspx?briefingsessionidx=13030"
-                android:textColor="#000000" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
-                android:background="@color/colorDarkGray" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/comment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#EAEAEA"
-                android:padding="10dp"
-                android:text="댓글"
-                android:textColor="#000000" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="TextView"
+                android:textSize="24sp" />
 
-            <ListView
-                android:id="@+id/listView"
+            <Button
+                android:id="@+id/btn_cancle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/createReply"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:hint="댓글을 입력해주세요" />
-
-                <Button
-                    android:id="@+id/generator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="입력" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="19dp" />
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@android:color/transparent"
+                android:text="취소"
+                android:textColor="@color/colorDarkGreen"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
-    </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/colorDarkGray" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="19dp" />
+
+        <RadioGroup
+            android:id="@+id/toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/pink_out_line"
+            android:checkedButton="@+id/Seoulcampus"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Seoulcampus"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1.91"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onRadioButton1Clicked"
+                android:text="인사캠"
+                android:textColor="#558139"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/Suwoncampus"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="onRadioButton2Clicked"
+                android:text="자과캠"
+                android:textColor="#558139"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="19dp" />
+
+        <FrameLayout
+            android:id="@+id/mainframe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">>
+
+            <ScrollView
+                android:id="@+id/getSeoulList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/getSuwonList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+        </FrameLayout>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/searchMenu"
@@ -263,7 +144,7 @@
         android:visibility="invisible">
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/searchWord"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/searchButton"
@@ -489,5 +370,6 @@
             android:textSize="24dp"
             android:textStyle="bold" />
     </RelativeLayout>
+
 
 </FrameLayout>
