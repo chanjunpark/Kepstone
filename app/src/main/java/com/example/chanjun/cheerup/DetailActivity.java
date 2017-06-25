@@ -43,17 +43,18 @@ public class DetailActivity extends AppCompatActivity {
     EditText editText;
     ListView listView;
     static ChatAdapter adapter;
-    static int countReplies;
     TextView comment;
 
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_information);
+
+
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference = firebaseDatabase.getReference();
 
 
         SearchMenu = (RelativeLayout) findViewById(R.id.searchMenu);
@@ -65,6 +66,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
 
         });
@@ -77,9 +79,11 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
+        //댓글 작성하고 불러오기 시작
+
         adapter = new ChatAdapter();
         listView.setAdapter(adapter);
-        setListViewHeightBasedOnChildren(listView);
+        //setListViewHeightBasedOnChildren(listView);
         comment = (TextView) findViewById(R.id.comment);
         comment.setText("댓글("+adapter.getCount()+")");
 

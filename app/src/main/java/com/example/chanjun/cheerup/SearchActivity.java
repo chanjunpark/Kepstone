@@ -24,6 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -51,13 +52,14 @@ public class SearchActivity extends AppCompatActivity {
     RecruitingAdapter adapter;
     TextView comment;
     Button cancleButton;
-    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference = firebaseDatabase.getReference("information");
 
         scrollView1 = (ScrollView) findViewById(R.id.getSeoulList);
         scrollView2 = (ScrollView) findViewById(R.id.getSuwonList);
@@ -73,6 +75,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -86,6 +89,7 @@ public class SearchActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
 
         });
@@ -95,28 +99,27 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-        adapter = new SearchActivity.RecruitingAdapter();
+        adapter = new RecruitingAdapter();
         listView.setAdapter(adapter);
-        setListViewHeightBasedOnChildren(listView);
 
 
         //데이터 불러오기
-        databaseReference.child("information").addChildEventListener(new ChildEventListener() {  // message는 child의 이벤트를 수신합니다.
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                RecruitingData recruitingData = dataSnapshot.getValue(RecruitingData.class);// recruitingData를 가져오고
-                adapter.addItem(recruitingData.getCorporationName());  // adapter에 추가합니다.
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                adapter.clear();
+                for (DataSnapshot corData : dataSnapshot.getChildren()) {
+                    String corName = corData.getValue(RecruitingData.class).getCorporationName();
+                    adapter.addItem(corName);
+                }
                 adapter.notifyDataSetChanged();
                 setListViewHeightBasedOnChildren(listView);
             }
+
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) { }
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) { }
-            @Override
-            public void onCancelled(DatabaseError databaseError) { }
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
         });
 
     }
@@ -235,6 +238,10 @@ public class SearchActivity extends AppCompatActivity {
             view.setName(item.getCorporationName());
 
             return view;
+        }
+
+        public void clear() {
+            items.clear();
         }
     }
 

@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 intent.putExtra("inputWord",searchWord.getText().toString());
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
 
         });
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MypageActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -100,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),FavoriteActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
